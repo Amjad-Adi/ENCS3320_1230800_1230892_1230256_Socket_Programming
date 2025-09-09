@@ -1,0 +1,119 @@
+body {
+    font-family: "Tahoma", "Arial", sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #222;
+}
+
+.title-red {
+    color: rgb(128, 0, 0);
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+h1, h2 {
+    font-family: "Segoe UI", "Tahoma", sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #003366;
+    border-right: 5px solid #800000;
+    padding-right: 10px;
+    margin-top: 40px;
+}
+
+p {
+    line-height: 1.8;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+table {
+    width: 90%;
+    margin: 25px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th {
+    background-color: #003366;
+    color: #fff;
+    padding: 12px;
+    font-weight: bold;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f6fa;
+}
+
+table tr:hover {
+    background-color: #e6f0ff;
+}
+
+.team-photo {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #003366;
+}
+
+ol, ul {
+    background: #fff;
+    padding: 15px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin: 20px 0;
+}
+
+li {
+    margin: 8px 0;
+}
+
+a {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 6px;
+    background-color: #800000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: #a00000;
+}
+
+table td, table th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+table td:nth-child(2),
+table th:nth-child(2) {
+    text-align: center;
+    direction: ltr;
+}
