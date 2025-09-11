@@ -1,0 +1,11 @@
+.Center {
+    height: 700px;
+           display: flex;              /* enable flexbox */
+      justify-content: center;    /* center horizontally */
+      align-items: center;
+}
+
+footer{
+       display: flex; 
+       justify-content: center; 
+}
