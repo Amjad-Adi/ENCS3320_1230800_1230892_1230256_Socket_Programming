@@ -15,7 +15,6 @@ while True:
 		userInput = userInput.split(' ')
 		if userInput and len(userInput) >= 2 and userInput[1].startswith('/'):
 			userInput = userInput[1]
-			flag = False
 			dirToRead=""
 			if userInput == "/" or userInput == "/index.html" or userInput == "/en" or userInput == "/main_en.html":
 				userInput = "main_en.html"
@@ -32,7 +31,6 @@ while True:
 				else:
 					phrase = "404 Not Found"
 			elif userInput.startswith("/?filename="):
-				flag = True
 				dirToRead=available_dir
 				userInput = userInput[11:]
 				if not os.path.exists(dirToRead):
@@ -46,9 +44,8 @@ while True:
 					else:
 						phrase = "404 Not Found"
 			else:
-				flag = True
 				userInput = userInput[1:]
-				dirToRead=task1_dir
+				dirToRead=available_dir
 				if userInput in os.listdir(dirToRead):
 					if "private" in userInput:
 						phrase = "403 Forbidden"
@@ -73,20 +70,15 @@ while True:
 	elif phrase == "403 Forbidden": userInput = "error403.html"
 
 	if phrase == "200 OK":
-		if flag:
-			if userInput.endswith(".css"):
-				s+='Content-Type: text/css\r\n'
-			else:
-				s+='Content-Type: application/octet-stream\r\n'
-				s+=f'Content-Disposition: filename="{userInput}"\r\n'
-
-			f = open(os.path.join(dirToRead, userInput), 'rb')
-			data = f.read()
-			s+=f'Content-Length: {len(data)}\r\n'
+		if userInput.endswith(".css") or userInput.endswith(".html"):
+			s+=f'Content-Type: text/{userInput.split(".")[1]}\r\n'
 		else:
-			s+='Content-Type: text/html \r\n'
-			f = open(os.path.join(dirToRead, userInput), 'rb')
-			data = f.read()
+			s+='Content-Type: application/octet-stream\r\n'
+		s+=f'Content-Disposition: filename="{userInput}"\r\n'
+
+		f = open(os.path.join(dirToRead, userInput), 'rb')
+		data = f.read()
+		#s+=f'Content-Length: {len(data)}\r\n'
 	else:
 		s+='Content-Type: text/html \r\n'
 		f = open(os.path.join(task1_dir, userInput), 'r')
