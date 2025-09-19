@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url(../Images/Background.jpg);
+  background-image: url(Background.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,10 +11,16 @@ body {
 
 html {
   scroll-behavior: smooth;
- }
+}
 
-section, .team-section, .about-section, .network-section, .links-section {
-  scroll-margin-top: 10px; } 
+section,
+.team-section,
+.about-section,
+.network-section,
+.links-section {
+  scroll-margin-top: 10px;
+}
+
 #navbar {
   position: fixed;
   top: 0;
@@ -23,7 +29,7 @@ section, .team-section, .about-section, .network-section, .links-section {
   padding: 0px;
   z-index: 9999;
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   transition: top 0.3s;
   background-color: #cec9c9;
   width: 100%;
@@ -56,9 +62,11 @@ ul {
   display: block;
   list-style: circle;
 }
+
 ul.links {
   background-color: #cec9c9;
 }
+
 ul li {
   display: block;
   margin: 12px 0;
@@ -222,11 +230,10 @@ table th:nth-child(2) {
   font-size: 18px;
   font-family: Arial, sans-serif;
   position: relative;
-  
+
 }
 
-:lang(ar)
-.styled-list li::before {
+:lang(ar) .styled-list li::before {
   content: counter(list-counter);
   position: absolute;
   right: -38px;
@@ -243,8 +250,7 @@ table th:nth-child(2) {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-:lang(en)
-.styled-list li::before {
+:lang(en) .styled-list li::before {
   content: counter(list-counter);
   position: absolute;
   left: -45px;
@@ -263,7 +269,7 @@ table th:nth-child(2) {
 
 .links {
   display: flex;
-  gap:200px;
+  gap: 200px;
   list-style: none;
   padding: 0;
 }
