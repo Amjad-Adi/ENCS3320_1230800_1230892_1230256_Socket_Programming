@@ -1,9 +1,9 @@
 import os
 from socket import *
 task1_dir = os.path.dirname(__file__)	# Directory of the server
-available_dir = os.path.join(task1_dir, 'Server Database')	# Directory of available files
-html_dir = os.path.join(task1_dir, 'HTML Files')			# Directory of HTML files
-css_dir = os.path.join(task1_dir, 'CSS Files')				# Directory of CSS files
+available_dir = os.path.join(task1_dir, 'Server_Database')	# Directory of available files
+html_dir = os.path.join(task1_dir, 'HTML_Files')			# Directory of HTML files
+css_dir = os.path.join(task1_dir, 'CSS_Files')				# Directory of CSS files
 
 # Port number (5000 + last 3 digits of 1230256 = 5256)
 port = 5256 
@@ -101,6 +101,7 @@ while True:
 			s+=f'Content-Type: text/{userInput.split(".")[1]}\r\n'
 		else:
 			s+='Content-Type: application/octet-stream\r\n'
+		s+="Connection: keep-alive\r\n"
 		s+=f'Content-Disposition: filename="{userInput}"\r\n'
 
 		f = open(os.path.join(dirToRead, userInput), 'rb')
@@ -109,14 +110,13 @@ while True:
 	else:
 		# For 404 and 403 errors, the content type is always text/html
 		s+='Content-Type: text/html \r\n'
+		s+="Connection: keep-alive\r\n"
 		f = open(os.path.join(html_dir, userInput), 'rb')
 		data = f.read().decode().format(f"IP: {addr[0]}, Port: {addr[1]}").encode()
 		f.close()
 
 	s+='\r\n'
 	connectionSocket.send(s.encode()) 	# Send the response header
-	connectionSocket.send(data)			# Send the response body
+	if data:
+		connectionSocket.send(data)			# Send the response body
 	connectionSocket.close() 			# Close the connection socket
-
-
-	
