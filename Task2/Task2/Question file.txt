@@ -1,4 +1,4 @@
-Q1: What does HTTP stand for?
+What does HTTP stand for?
 a) Hyper Transfer Text Protocol
 b) HyperText Transfer Protocol
 c) High Text Transmission Protocol
@@ -6,7 +6,7 @@ d) None of the above
 #
 b
 $
-Q2: Which protocol provides connection-oriented communication at the transport layer?
+Which protocol provides connection-oriented communication at the transport layer?
 a) User Datagram Protocol (UDP)
 b) Internet Protocol (IP)
 c) Transmission Control Protocol (TCP)
@@ -14,7 +14,7 @@ d) Address Resolution Protocol (ARP)
 #
 c
 $
-Q3: Which of the following is responsible for logical addressing and routing of packets?
+Which of the following is responsible for logical addressing and routing of packets?
 a) Internet Protocol (IP)
 b) Ethernet
 c) Transmission Control Protocol (TCP)
@@ -22,7 +22,7 @@ d) File Transfer Protocol (FTP)
 #
 a
 $
-Q4: What type of address is used to uniquely identify devices on a local network?
+What type of address is used to uniquely identify devices on a local network?
 a) IP address
 b) Media Access Control (MAC) address
 c) Domain name
@@ -30,11 +30,10 @@ d) Port number
 #
 b
 $
-Q5: Which of the following operates at the physical layer of the OSI model?
+Which of the following operates at the physical layer of the OSI model?
 a) Switch
 b) Router
 c) Repeater
 d) Bridge
 #
 c
-$
